@@ -38,5 +38,9 @@ jobs:
         with:
           name: build-site
           path: build
+      - name: Configure credential
+        run: |
+          git config --global user.email "raka.suryaardi@gmail.com"
+          git config --global user.name "Raka Suryaardi Widjaja"
       - name: Publish site
         run: npm run publish
