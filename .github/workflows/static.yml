@@ -40,6 +40,7 @@ jobs:
           path: build
       - name: Configure credential
         run: |
+          git remote set-url origin https://kokoraka@github.com/kokoraka/kokoraka.github.io.git
           git config --global user.email "raka.suryaardi@gmail.com"
           git config --global user.name "Raka Suryaardi Widjaja"
       - name: Publish site
