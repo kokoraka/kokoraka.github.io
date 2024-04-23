@@ -28,9 +28,9 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - name: Configure credential
         run: |
-          git remote set-url origin https://${{ secrets.GITHUB_TOKEN }}@github.com/kokoraka/kokoraka.github.io.git
           git config --global user.email "raka.suryaardi@gmail.com"
           git config --global user.name "Raka Suryaardi Widjaja"
       - name: Checkout
