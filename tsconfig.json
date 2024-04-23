@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "module": "es2020",
+    "target": "es5",
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "importHelpers": true
+  },
+  "exclude": [
+    "dist",
+    "build",
+    "node_modules",
+    "src/index.ts",
+    "jest.config.ts",
+    "jest.setup.js",
+    "tailwind.config.ts",
+    "**/*.test.*",
+  ]
+}

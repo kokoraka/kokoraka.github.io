@@ -1,0 +1,82 @@
+{
+  "name": "raka-site",
+  "version": "0.0.1",
+  "private": true,
+  "homepage": "https://kokoraka.github.io/kokoraka.github.io",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "postbuild": "react-snap",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "eject": "react-scripts eject",
+    "deploy": "npm install && npm run build",
+    "postdeploy": "gh-pages -d build",
+    "deploy:dev": "npm run deploy && shx cp public/robots-dev.txt build/robots.txt",
+    "deploy:prod": "npm run deploy && shx cp public/robots-prod.txt build/robots.txt"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@loadable/component": "^5.15.3",
+    "react": "^17.0.2",
+    "react-cookie": "^6.1.1",
+    "react-dom": "^17.0.2",
+    "react-ga4": "^2.1.0",
+    "react-helmet-async": "^2.0.1",
+    "react-icons": "^5.0.1",
+    "react-router-dom": "^6.1.1",
+    "react-scripts": "^5.0.1",
+    "react-toastify": "^9.1.3",
+    "web-vitals": "^2.1.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "@testing-library/user-event": "^13.2.1",
+    "@types/jest": "^29.5.11",
+    "@types/loadable__component": "^5.13.8",
+    "@types/node": "^20.11.6",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "dotenv": "^16.3.1",
+    "eslint-config-react-app": "^7.0.1",
+    "gh-pages": "^6.1.1",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "react-snap": "^1.23.0",
+    "shx": "^0.3.4",
+    "tailwindcss": "^3.4.1",
+    "ts-jest": "^29.1.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  },
+  "overrides": {
+    "typescript": "^5.2.2"
+  },
+  "reactSnap": {
+    "skipThirdPartyRequests": true,
+    "port": 3001,
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ]
+  }
+}
