@@ -28,11 +28,12 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Configure credential
-        run: |
-          git config --global user.email "raka.suryaardi@gmail.com"
-          git config --global user.name "Raka Suryaardi Widjaja"
+      # - name: Checkout
+      #   uses: actions/checkout@v3
+      # - name: Configure credential
+      #   run: |
+      #     git config --global user.email "raka.suryaardi@gmail.com"
+      #     git config --global user.name "Raka Suryaardi Widjaja"
       - name: Checkout
         uses: actions/checkout@v4
       - name: Deploy site
@@ -43,4 +44,5 @@ jobs:
           name: build-site
           path: build
       - name: Publish site
-        run: npm run publish
+        id: deployment
+        uses: actions/deploy-pages@v1
