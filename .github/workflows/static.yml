@@ -29,6 +29,11 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
+      - name: Configure credential
+        run: |
+          git remote set-url origin https://kokoraka:${{ secrets.GITHUB_TOKEN }}@github.com/kokoraka/kokoraka.github.io.git
+          git config --global user.email "raka.suryaardi@gmail.com"
+          git config --global user.name "Raka Suryaardi Widjaja"
       - name: Checkout
         uses: actions/checkout@v4
       - name: Deploy site
@@ -38,10 +43,5 @@ jobs:
         with:
           name: build-site
           path: build
-      - name: Configure credential
-        run: |
-          git remote set-url origin https://kokoraka@github.com/kokoraka/kokoraka.github.io.git
-          git config --global user.email "raka.suryaardi@gmail.com"
-          git config --global user.name "Raka Suryaardi Widjaja"
       - name: Publish site
         run: npm run publish
