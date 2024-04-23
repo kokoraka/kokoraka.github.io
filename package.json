@@ -2,7 +2,6 @@
   "name": "raka-site",
   "version": "0.0.1",
   "private": true,
-  "homepage": "https://kokoraka.github.io/kokoraka.github.io",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -12,9 +11,9 @@
     "test:cov": "jest --coverage",
     "eject": "react-scripts eject",
     "deploy": "npm install && npm run build",
-    "postdeploy": "gh-pages -d build",
     "deploy:dev": "npm run deploy && shx cp public/robots-dev.txt build/robots.txt",
-    "deploy:prod": "npm run deploy && shx cp public/robots-prod.txt build/robots.txt"
+    "deploy:prod": "npm run deploy && shx cp public/robots-prod.txt build/robots.txt",
+    "publish": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
